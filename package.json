@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "yarn prettier --write \"**/*.{js,ts}\"",
+    "extract": "ts-node main.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "csv-writer": "^1.6.0"
+    "@types/node": "^20.3.2",
+    "axios": "^1.4.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "typescript": "^5.1.6"
   }
 }
