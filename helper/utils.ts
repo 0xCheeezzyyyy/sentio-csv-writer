@@ -23,8 +23,10 @@ function processRawJsonDataToCsv(
 
   // Prase Json Data
   const data = JSON.parse(jsonData);
+  console.log("Data Entry", data.entries[0]);
   const processedData = data.entries.map((entry: any) => ({
     ...entry.attributes,
+    transactionHash: entry.attributes?.transactionHash ?? entry.transactionHash,
     chainId: entry.chainId,
   }));
 
