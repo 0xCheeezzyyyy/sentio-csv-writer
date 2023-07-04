@@ -1,4 +1,5 @@
 import axios from "axios";
+import fs from "fs";
 import dotenv from "dotenv";
 
 // Constants
@@ -18,15 +19,16 @@ dotenv.config();
 export async function getSentioEventLogsInfo(
   infoTableOption: InfoTableOptions
 ) {
-  const { packageType, query } = INFO_TABLE_OPTIONS_DETAILS[infoTableOption];
-  const res = await fetchEventLogsInfo(packageType, query);
+  const { packageType, query, jsonFileName } = INFO_TABLE_OPTIONS_DETAILS[infoTableOption];
+  const res = await fetchEventLogsInfo(packageType, query, jsonFileName);
 
   return res;
 }
 
 async function fetchEventLogsInfo(
   packageType: PackageType,
-  query: string = ""
+  query: string = "",
+  jsonFileName: string
 ) {
   try {
 
@@ -45,6 +47,7 @@ async function fetchEventLogsInfo(
     });
 
     const data = response.data;
+    fs.writeFileSync(`./input/${jsonFileName}`, JSON.stringify(data), 'utf8');
     return data;
   } catch (error) {
     console.error("[EFFECTIVE_INFO_FETCH ERROR] -", error);

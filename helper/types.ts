@@ -27,7 +27,7 @@ export type PackageConfigType = {
 
 export type RequestDataFilterType = {
   query?: string;
-  sorts?: string[];
+  sorts?: any[];
   limit: number;
   timeRange: {
     start: {

@@ -57,8 +57,10 @@ export const INFO_TABLE_OPTIONS_DETAILS: Record<
 };
 
 export const DEFAULT_REQUEST_FILTER: RequestDataFilterType = {
-  query: "",
-  sorts: [],
+  sorts: [   {
+    field: 'timestamp',
+    desc: true,
+  }],
   limit: 100000,
   timeRange: {
     start: {
