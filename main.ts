@@ -4,7 +4,7 @@ import { InfoTableOptions } from "./helper/types";
 
 async function main() {
   await retrieveTableInfo(InfoTableOptions.TX_MAIN);
-  // await retrieveTableInfo(InfoTableOptions.TX_EFFECTIVE_INFO);
+  await retrieveTableInfo(InfoTableOptions.TX_EFFECTIVE_INFO);
 }
 
 main();
