@@ -19,7 +19,8 @@ dotenv.config();
 export async function getSentioEventLogsInfo(
   infoTableOption: InfoTableOptions
 ) {
-  const { packageType, query, jsonFileName } = INFO_TABLE_OPTIONS_DETAILS[infoTableOption];
+  const { packageType, query, jsonFileName } =
+    INFO_TABLE_OPTIONS_DETAILS[infoTableOption];
   const res = await fetchEventLogsInfo(packageType, query, jsonFileName);
 
   return res;
@@ -31,7 +32,6 @@ async function fetchEventLogsInfo(
   jsonFileName: string
 ) {
   try {
-
     const packageDetails = PACKAGE_API_DETAILS[packageType];
     const effectiveInfoRequestFilter = { ...DEFAULT_REQUEST_FILTER, query };
     const requestData = getRequestDataSchema(
@@ -47,7 +47,7 @@ async function fetchEventLogsInfo(
     });
 
     const data = response.data;
-    fs.writeFileSync(`./input/${jsonFileName}`, JSON.stringify(data), 'utf8');
+    fs.writeFileSync(`./input/${jsonFileName}`, JSON.stringify(data), "utf8");
     return data;
   } catch (error) {
     console.error("[EFFECTIVE_INFO_FETCH ERROR] -", error);

@@ -34,6 +34,7 @@ const TX_EFFECTIVE_INFO_FIELDS: TableFieldType[] = [
   { id: "effectivePtVolume", title: "Effective PT Trade Volume" },
   { id: "swapFee", title: "Swap Fee" },
   { id: "effectiveImpliedYield", title: "Effective Implied Yield" },
+  { id: "postSwapImpliedYield", title: "Post Swap Implied Yield" },
 ];
 
 export const INFO_TABLE_OPTIONS_DETAILS: Record<
@@ -57,10 +58,12 @@ export const INFO_TABLE_OPTIONS_DETAILS: Record<
 };
 
 export const DEFAULT_REQUEST_FILTER: RequestDataFilterType = {
-  sorts: [   {
-    field: 'timestamp',
-    desc: true,
-  }],
+  sorts: [
+    {
+      field: "timestamp",
+      desc: true,
+    },
+  ],
   limit: 100000,
   timeRange: {
     start: {
