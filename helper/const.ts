@@ -24,6 +24,7 @@ const TX_MAIN_FIELDS: TableFieldType[] = [
   { id: "tokensOutAmount1", title: "Tokens Out Amount 1" },
   { id: "type", title: "Type" },
   { id: "valueUsd", title: "Value USD" },
+  { id: "saleType", title: "Sale Type" },
 ];
 
 const TX_EFFECTIVE_INFO_FIELDS: TableFieldType[] = [
@@ -97,7 +98,7 @@ export const PACKAGE_API_DETAILS: Record<string, PackageConfigType> = {
     projectOwner: PENDLE_PROJECT_OWNER,
     projectSlug: "user-activities",
     projectId: "oWaSDkaN",
-    version: 19,
+    version: 20,
   },
   REVENUE: {
     url: `${API_URI_PREFIX}/pendle-internal-fees`,
