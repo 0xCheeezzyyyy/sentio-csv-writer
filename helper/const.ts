@@ -91,14 +91,14 @@ export const PACKAGE_API_DETAILS: Record<string, PackageConfigType> = {
     projectOwner: PENDLE_PROJECT_OWNER,
     projectSlug: "pendle-internal-dashboard",
     projectId: "Y7XHnDnH",
-    version: 110,
+    version: 117,
   },
   USER_ACTIVITIES: {
     url: `${API_URI_PREFIX}/user-activities`,
     projectOwner: PENDLE_PROJECT_OWNER,
     projectSlug: "user-activities",
     projectId: "oWaSDkaN",
-    version: 22,
+    version: 23,
   },
   REVENUE: {
     url: `${API_URI_PREFIX}/pendle-internal-fees`,
